@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Súmulas Oficiais - 1º Torneio Beneficente Meu Amigo 4 Patas</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Google Fonts - Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#10B981',
+              darkGreen: '#047857',
+              blue: '#0284C7',
+              amber: '#F59E0B',
+              rose: '#F43F5E'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilos de Impressão Otimizados para Folha A4 */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 8mm;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+        font-size: 11px !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .sumula-page {
+        border: 2px solid #000 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        background: white !important;
+        page-break-after: always;
+        break-inside: avoid;
+      }
+      input[type="text"], input[type="number"], select, textarea {
+        border: none !important;
+        border-bottom: 1px dashed #666 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 4px !important;
+      }
+      .print-border-black {
+        border-color: #000 !important;
+      }
+      .print-bg-gray {
+        background-color: #f1f5f9 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 font-sans text-slate-800 min-h-screen antialiased selection:bg-emerald-500 selection:text-white pb-12">
+
+  <!-- Header No-Print -->
+  <header class="no-print bg-slate-900 text-white border-b border-slate-800 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-slate-900 flex items-center justify-center font-extrabold text-xl shadow-md">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+        <div>
+          <h1 class="font-extrabold text-lg sm:text-xl leading-tight">Súmulas Oficiais de Jogo</h1>
+          <p class="text-xs text-emerald-400 font-medium">1º Torneio Beneficente Meu Amigo 4 Patas • IFSP Avaré</p>
+        </div>
+      </div>
+
+      <!-- Botão de Impressão -->
+      <div class="flex items-center gap-3">
+        <button onclick="window.print()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl shadow-md hover:shadow-amber-500/20 transition-all flex items-center gap-2 text-xs sm:text-sm cursor-pointer">
+          <i class="fa-solid fa-print"></i>
+          <span>Imprimir Súmula Atual</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navegação de Modalidades (No-Print) -->
+  <nav class="no-print max-w-6xl mx-auto px-4 mt-6">
+    <div class="bg-white rounded-2xl p-2 shadow-sm border border-slate-200 flex flex-wrap gap-2">
+      <button data-tab="futsal" class="tab-btn active flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+        <i class="fa-solid fa-futbol text-emerald-200"></i> Futsal
+      </button>
+      <button data-tab="volei" class="tab-btn flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 bg-slate-100 text-slate-600 hover:bg-sky-50 hover:text-sky-700">
+        <i class="fa-solid fa-volleyball text-sky-600"></i> Vôlei Misto
+      </button>
+      <button data-tab="beachtennis" class="tab-btn flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-700">
+        <i class="fa-solid fa-table-tennis-paddle-ball text-amber-600"></i> Beach Tennis
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Area -->
+  <main class="max-w-5xl mx-auto px-2 sm:px-4 mt-6 print-container">
+
+    <!-- ========================================== -->
+    <!-- 1. SÚMULA DE FUTSAL                        -->
+    <!-- ========================================== -->
+    <div id="tab-futsal" class="tab-content sumula-page bg-white rounded-2xl p-4 sm:p-6 shadow-md border border-slate-300">
+      
+      <!-- Cabeçalho Institucional -->
+      <div class="border-b-2 border-slate-900 pb-3 mb-4">
+        <div class="flex justify-between items-center text-xs font-bold text-slate-600 uppercase mb-1">
+          <span>IFSP Campus Avaré • Diretoria de Esportes</span>
+          <span>Causa Animal • 06/12/2026</span>
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <h2 class="text-xl font-black text-slate-900 tracking-tight uppercase flex items-center gap-2">
+            <i class="fa-solid fa-futbol text-emerald-600 no-print"></i> SÚMULA DE FUTSAL
+          </h2>
+          <span class="bg-slate-900 text-white text-xs font-extrabold px-2.5 py-1 rounded">2 TEMPOS DE 20 MIN</span>
+        </div>
+      </div>
+
+      <!-- Dados da Partida -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs mb-4 bg-slate-50 p-3 rounded-lg border border-slate-200 print-bg-gray">
+        <div>
+          <label class="block font-bold text-slate-500 uppercase text-[10px]">Jogo Nº</label>
+          <input type="text" placeholder="Ex: Jogo 01" class="w-full font-bold text-slate-900 bg-transparent focus:outline-none" />
+        </div>
+        <div>
+          <label class="block font-bold text-slate-500 uppercase text-[10px]">Fase</label>
+          <select class="w-full font-bold text-slate-900 bg-transparent focus:outline-none">
+            <option>Semifinal 1</option>
+            <option>Semifinal 2</option>
+            <option>3º Lugar</option>
+            <option>GRANDE FINAL</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-500 uppercase text-[10px]">Horário Início</label>
+          <input type="text" placeholder="00:00" class="w-full font-bold text-slate-900 bg-transparent focus:outline-none" />
+        </div>
+        <div>
+          <label class="block font-bold text-slate-500 uppercase text-[10px]">Árbitro / Mesário</label>
+          <input type="text" placeholder="Nome do Responsável" class="w-full font-bold text-slate-900 bg-transparent focus:outline-none" />
+        </div>
+      </div>
+
+      <!-- Placar Principal e Faltas Coletivas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <!-- Equipe A -->
+        <div class="border-2 border-emerald-600 rounded-xl p-3 bg-emerald-50/30 print-border-black">
+          <div class="flex items-center justify-between mb-2">
+            <input type="text" placeholder="NOME EQUIPE A" class="font-black text-base uppercase text-emerald-900 bg-transparent w-full focus:outline-none" />
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded shrink-0">EQUIPE A</span>
+          </div>
+          
+          <div class="flex items-center justify-between bg-white p-2 rounded-lg border border-emerald-200 mb-2">
+            <span class="text-xs font-bold text-slate-600">GOLS REGULAMENTARES:</span>
+            <input type="number" min="0" placeholder="0" class="w-16 text-center font-black text-2xl text-emerald-700 focus:outline-none" />
+          </div>
+
+          <!-- Faltas Coletivas A -->
+          <div class="text-[11px] font-bold text-slate-700">
+            <span class="block mb-1">FALTAS COLETIVAS (5 Max / Tempo):</span>
+            <div class="flex gap-2 items-center text-xs">
+              <span>1ºT:</span>
+              <div class="flex gap-1">
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 1</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 2</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 3</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 4</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer text-rose-600 font-bold"><input type="checkbox" /> TL</label>
+              </div>
+            </div>
+            <div class="flex gap-2 items-center text-xs mt-1">
+              <span>2ºT:</span>
+              <div class="flex gap-1">
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 1</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 2</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 3</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 4</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer text-rose-600 font-bold"><input type="checkbox" /> TL</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Equipe B -->
+        <div class="border-2 border-slate-700 rounded-xl p-3 bg-slate-50/50 print-border-black">
+          <div class="flex items-center justify-between mb-2">
+            <input type="text" placeholder="NOME EQUIPE B" class="font-black text-base uppercase text-slate-900 bg-transparent w-full focus:outline-none" />
+            <span class="text-xs font-bold text-slate-700 bg-slate-200 px-2 py-0.5 rounded shrink-0">EQUIPE B</span>
+          </div>
+
+          <div class="flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200 mb-2">
+            <span class="text-xs font-bold text-slate-600">GOLS REGULAMENTARES:</span>
+            <input type="number" min="0" placeholder="0" class="w-16 text-center font-black text-2xl text-slate-900 focus:outline-none" />
+          </div>
+
+          <!-- Faltas Coletivas B -->
+          <div class="text-[11px] font-bold text-slate-700">
+            <span class="block mb-1">FALTAS COLETIVAS (5 Max / Tempo):</span>
+            <div class="flex gap-2 items-center text-xs">
+              <span>1ºT:</span>
+              <div class="flex gap-1">
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 1</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 2</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 3</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 4</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer text-rose-600 font-bold"><input type="checkbox" /> TL</label>
+              </div>
+            </div>
+            <div class="flex gap-2 items-center text-xs mt-1">
+              <span>2ºT:</span>
+              <div class="flex gap-1">
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 1</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 2</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 3</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer"><input type="checkbox" /> 4</label>
+                <label class="px-2 py-1 bg-white border rounded cursor-pointer text-rose-600 font-bold"><input type="checkbox" /> TL</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabela de Jogadores -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <!-- Jogadores A -->
+        <div>
+          <h4 class="text-xs font-bold uppercase text-slate-700 mb-1 border-b pb-1">Atletas - Equipe A</h4>
+          <table class="w-full text-[11px] border-collapse border border-slate-300">
+            <thead>
+              <tr class="bg-slate-100 text-slate-700 font-bold print-bg-gray">
+                <th class="border border-slate-300 px-1.5 py-1 text-center w-8">Nº</th>
+                <th class="border border-slate-300 px-2 py-1 text-left">Nome Completo</th>
+                <th class="border border-slate-300 px-1 py-1 text-center w-8">Gols</th>
+                <th class="border border-slate-300 px-1 py-1 text-center w-8">CA</th>
+                <th class="border border-slate-300 px-1 py-1 text-center w-8">CV</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 8 Linhas de Atletas -->
+              <script>
+                for(let i=1; i<=7; i++) {
+                  document.write(`
+                    <tr>
+                      <td class="border border-slate-300 p-0.5 text-center"><input type="text" class="w-full text-center focus:outline-none" /></td>
+                      <td class="border border-slate-300 p-0.5"><input type="text" class="w-full focus:outline-none" /></td>
+                      <td class="border border-slate-300 p-0.5 text-center"><input type="text" class="w-full text-center focus:outline-none" /></td>
+                      <td class="border border-slate-300 p-0.5 text-center"><input type="checkbox" /></td>
+                      <td class="border border-slate-300 p-0.5 text-center"><input type="checkbox" /></td>
+                    </tr>
+                  `);
+                }
+              </script>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Jogadores B -->
+        <div>
+          <h4 class="text-xs font-bold uppercase text-slate-700 mb-1 border-b pb-1">Atletas - Equipe B</h4>
+          <table class="w-full text-[11px] border-collapse border border-slate-300">
+            <thead>
+              <tr class="bg-slate-100 text-slate-700 font-bold print-bg-gray">
+                <th class="border border-slate-300 px-1.5 py-1 text-center w-8">Nº</th>
+                <th class="border border-slate-300 px-2 py-1 text-left">Nome Completo</th>
+                <th class="border border-slate-300 px-1 py-1 text-center w-8">Gols</th>
+                <th class="border border-slate-300 px-1 py-1 text-center w-8">CA</th>
+                <th class="border border-slate-300 px-1 py-1 text-center w-8">CV</th>
+              </tr>
+            </thead>
+            <tbody>
+              <script>
+                for(let i=1; i<=7; i++) {
+                  document.write(`
+                    <tr>
+                      <td class="border border-slate-300 p-0.5 text-center"><input type="text" class="w-full text-center focus:outline-none" /></td>
+                      <td class="border border-slate-300 p-0.5"><input type="text" class="w-full focus:outline-none" /></td>
+                      <td class="border border-slate-300 p-0.5 text-center"><input type="text" class="w-full text-center focus:outline-none" /></td>
+                      <td class="border border-slate-300 p-0.5 text-center"><input type="checkbox" /></td>
+                      <td class="border border-slate-300 p-0.5 text-center"><input type="checkbox" /></td>
+                    </tr>
+                  `);
+                }
+              </script>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Desempate em Pênaltis & Assinaturas -->
+      <div class="border-t border-slate-300 pt-3 text-xs">
+        <div class="bg-slate-50 p-2.5 rounded border border-slate-200 mb-3 flex flex-wrap items-center justify-between gap-2 print-bg-gray">
+          <span class="font-bold text-slate-800">DECISÃO POR PÊNALTIS (3 cobranças):</span>
+          <div class="flex items-center gap-4 font-bold">
+            <span>Equipe A: <input type="number" min="0" class="w-12 text-center border-b border-slate-400 focus:outline-none" /></span>
+            <span>X</span>
+            <span>Equipe B: <input type="number" min="0" class="w-12 text-center border-b border-slate-400 focus:outline-none" /></span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 text-center mt-6 pt-4 border-t border-slate-300">
+          <div>
+            <div class="border-b border-slate-400 mb-1"></div>
+            <span class="text-[10px] font-bold text-slate-600 block">Capitão Equipe A</span>
+          </div>
+          <div>
+            <div class="border-b border-slate-400 mb-1"></div>
+            <span class="text-[10px] font-bold text-slate-600 block">Árbitro / Mesário</span>
+          </div>
+          <div>
+            <div class="border-b border-slate-400 mb-1"></div>
+            <span class="text-[10px] font-bold text-slate-600 block">Capitão Equipe B</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. SÚMULA DE VÔLEI MISTO                    -->
+    <!-- ========================================== -->
+    <div id="tab-volei" class="tab-content sumula-page bg-white rounded-2xl p-4 sm:p-6 shadow-md border border-slate-300 hidden">
+      
+      <!-- Cabeçalho -->
+      <div class="border-b-2 border-slate-900 pb-3 mb-4">
+        <div class="flex justify-between items-center text-xs font-bold text-slate-600 uppercase mb-1">
+          <span>IFSP Campus Avaré • Diretoria de Esportes</span>
+          <span>Causa Animal • 06/12/2026</span>
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <h2 class="text-xl font-black text-slate-900 tracking-tight uppercase flex items-center gap-2">
+            <i class="fa-solid fa-volleyball text-sky-600 no-print"></i> SÚMULA DE VÔLEI MISTO
+          </h2>
+          <span class="bg-sky-700 text-white text-xs font-extrabold px-2.5 py-1 rounded">2 SETS DE 25 PTS</span>
+        </div>
+      </div>
+
+      <!-- Checklist de Validação Obrigatória -->
+      <div class="bg-amber-50 border-2 border-amber-400 rounded-xl p-3 mb-4 text-xs font-bold text-amber-900 flex flex-col sm:flex-row items-center justify-between gap-2 print-border-black print-bg-gray">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-shield-halved text-amber-600 text-base"></i>
+          <span>CHECKLIST DE VALIDAÇÃO TÉCNICA (OBRIGATÓRIO):</span>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <label class="flex items-center gap-1.5 cursor-pointer">
+            <input type="checkbox" class="accent-sky-600" />
+            <span>Mínimo 3 Mulheres em Quadra</span>
+          </label>
+          <label class="flex items-center gap-1.5 cursor-pointer">
+            <input type="checkbox" class="accent-sky-600" />
+            <span>Rede na Altura Intermediária (2,35m)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Dados da Partida -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs mb-4 bg-slate-50 p-3 rounded-lg border border-slate-200 print-bg-gray">
+        <div>
+          <label class="block font-bold text-slate-500 uppercase text-[10px]">Jogo Nº</label>
+          <input type="text" placeholder="Ex: Vôlei 01" class="w-full font-bold text-slate-900 bg-transparent focus:outline-none" />
+        </div>
+        <div>
+          <label class="block font-bold text-slate-500 uppercase text-[10px]">Fase</label>
+          <select class="w-full font-bold text-slate-900 bg-transparent focus:outline-none">
+            <option>Semifinal 1</option>
+            <option>Semifinal 2</option>
+            <option>3º Lugar</option>
+            <option>GRANDE FINAL</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-500 uppercase text-[10px]">Equipe A</label>
+          <input type="text" placeholder="Nome Equipe A" class="w-full font-bold text-slate-900 bg-transparent focus:outline-none" />
+        </div>
+        <div>
+          <label class="block font-bold text-slate-500 uppercase text-[10px]">Equipe B</label>
+          <input type="text" placeholder="Nome Equipe B" class="w-full font-bold text-slate-900 bg-transparent focus:outline-none" />
+        </div>
+      </div>
+
+      <!-- Controle dos Sets -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        
+        <!-- 1º Set -->
+        <div class="border-2 border-sky-500 rounded-xl p-3 bg-sky-50/20 print-border-black">
+          <h3 class="font-extrabold text-sm text-sky-900 mb-2 border-b border-sky-200 pb-1">1º SET (Até 25 pts)</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between items-center bg-white p-2 rounded border">
+              <span class="font-bold">Equipe A:</span>
+              <input type="number" min="0" max="35" class="w-12 text-center font-black text-lg text-sky-700 focus:outline-none" />
+            </div>
+            <div class="flex justify-between items-center bg-white p-2 rounded border">
+              <span class="font-bold">Equipe B:</span>
+              <input type="number" min="0" max="35" class="w-12 text-center font-black text-lg text-slate-800 focus:outline-none" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 2º Set -->
+        <div class="border-2 border-sky-500 rounded-xl p-3 bg-sky-50/20 print-border-black">
+          <h3 class="font-extrabold text-sm text-sky-900 mb-2 border-b border-sky-200 pb-1">2º SET (Até 25 pts)</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between items-center bg-white p-2 rounded border">
+              <span class="font-bold">Equipe A:</span>
+              <input type="number" min="0" max="35" class="w-12 text-center font-black text-lg text-sky-700 focus:outline-none" />
+            </div>
+            <div class="flex justify-between items-center bg-white p-2 rounded border">
+              <span class="font-bold">Equipe B:</span>
+              <input type="number" min="0" max="35" class="w-12 text-center font-black text-lg text-slate-800 focus:outline-none" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Desempate: Saldo ou Super Tie-Break -->
+        <div class="border-2 border-amber-500 rounded-xl p-3 bg-amber-50/30 print-border-black">
+          <h3 class="font-extrabold text-sm text-amber-900 mb-2 border-b border-amber-200 pb-1">DESEMPATE (Se 1 x 1)</h3>
+          <p class="text-[10px] text-slate-600 mb-2">1º Saldo total de pontos nos 2 sets. Se igual: Super Tie-Break (7 pts).</p>
+          <div class="space-y-1 text-xs">
+            <div class="flex justify-between items-center">
+              <span class="font-bold">Saldo Pontos Eq. A:</span>
+              <input type="number" class="w-12 text-center font-bold border-b focus:outline-none" />
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-bold">Saldo Pontos Eq. B:</span>
+              <input type="number" class="w-12 text-center font-bold border-b focus:outline-none" />
+            </div>
+            <div class="pt-1 border-t flex justify-between items-center font-bold text-amber-950">
+              <span>Tie-Break 7 pts:</span>
+              <div class="flex gap-1">
+                <input type="number" placeholder="A" class="w-8 text-center border focus:outline-none bg-white" />
+                <span>x</span>
+                <input type="number" placeholder="B" class="w-8 text-center border focus:outline-none bg-white" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tabela Simplificada de Atletas -->
+      <div class="mb-4">
+        <h4 class="text-xs font-bold uppercase text-slate-700 mb-1">Relação de Atletas em Quadra / Reservas</h4>
+        <table class="w-full text-[11px] border-collapse border border-slate-300">
+          <thead>
+            <tr class="bg-slate-100 text-slate-700 font-bold print-bg-gray">
+              <th class="border border-slate-300 p-1 text-center w-8">Nº</th>
+              <th class="border border-slate-300 p-1 text-left">Atleta Equipe A</th>
+              <th class="border border-slate-300 p-1 text-center w-12">Sexo</th>
+              <th class="border border-slate-300 p-1 text-center w-8">Nº</th>
+              <th class="border border-slate-300 p-1 text-left">Atleta Equipe B</th>
+              <th class="border border-slate-300 p-1 text-center w-12">Sexo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <script>
+              for(let i=1; i<=6; i++) {
+                document.write(`
+                  <tr>
+                    <td class="border border-slate-300 p-0.5 text-center"><input type="text" class="w-full text-center focus:outline-none" /></td>
+                    <td class="border border-slate-300 p-0.5"><input type="text" class="w-full focus:outline-none" /></td>
+                    <td class="border border-slate-300 p-0.5 text-center"><select class="w-full bg-transparent"><option>F</option><option>M</option></select></td>
+                    <td class="border border-slate-300 p-0.5 text-center"><input type="text" class="w-full text-center focus:outline-none" /></td>
+                    <td class="border border-slate-300 p-0.5"><input type="text" class="w-full focus:outline-none" /></td>
+                    <td class="border border-slate-300 p-0.5 text-center"><select class="w-full bg-transparent"><option>F</option><option>M</option></select></td>
+                  </tr>
+                `);
+              }
+            </script>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Resultado Final Vôlei -->
+      <div class="border-t border-slate-300 pt-3 text-xs">
+        <div class="bg-sky-50 p-3 rounded-lg border border-sky-200 flex justify-between items-center print-bg-gray">
+          <span class="font-extrabold text-sky-950 uppercase">VENCEDOR DA PARTIDA:</span>
+          <input type="text" placeholder="Nome da Equipe Vencedora" class="font-black text-sm text-sky-900 border-b border-sky-400 bg-transparent w-64 focus:outline-none" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 text-center mt-6 pt-4 border-t border-slate-300">
+          <div>
+            <div class="border-b border-slate-400 mb-1"></div>
+            <span class="text-[10px] font-bold text-slate-600 block">Capitão Equipe A</span>
+          </div>
+          <div>
+            <div class="border-b border-slate-400 mb-1"></div>
+            <span class="text-[10px] font-bold text-slate-600 block">Capitão Equipe B</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 3. SÚMULA DE BEACH TENNIS                  -->
+    <!-- ========================================== -->
+    <div id="tab-beachtennis" class="tab-content sumula-page bg-white rounded-2xl p-4 sm:p-6 shadow-md border border-slate-300 hidden">
+      
+      <!-- Cabeçalho -->
+      <div class="border-b-2 border-slate-900 pb-3 mb-4">
+        <div class="flex justify-between items-center text-xs font-bold text-slate-600 uppercase mb-1">
+          <span>IFSP Campus Avaré • Arena de Areia</span>
+          <span>Causa Animal • 06/12/2026</span>
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <h2 class="text-xl font-black text-slate-900 tracking-tight uppercase flex items-center gap-2">
+            <i class="fa-solid fa-table-tennis-paddle-ball text-amber-600 no-print"></i> SÚMULA DE BEACH TENNIS
+          </h2>
+          <span class="bg-amber-600 text-white text-xs font-extrabold px-2.5 py-1 rounded">SET ÚNICO 6 GAMES (NO-AD)</span>
+        </div>
+      </div>
+
+      <!-- Dados do Confronto de Duplas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+        <!-- Dupla A -->
+        <div class="border-2 border-amber-500 rounded-xl p-3 bg-amber-50/20 print-border-black">
+          <span class="text-xs font-bold text-amber-800 uppercase block mb-1">DUPLA A</span>
+          <input type="text" placeholder="Atleta 1 (Nome Completo)" class="w-full text-xs font-bold border-b mb-1 focus:outline-none" />
+          <input type="text" placeholder="Atleta 2 (Nome Completo)" class="w-full text-xs font-bold border-b focus:outline-none" />
+        </div>
+
+        <!-- Dupla B -->
+        <div class="border-2 border-slate-700 rounded-xl p-3 bg-slate-50/40 print-border-black">
+          <span class="text-xs font-bold text-slate-800 uppercase block mb-1">DUPLA B</span>
+          <input type="text" placeholder="Atleta 1 (Nome Completo)" class="w-full text-xs font-bold border-b mb-1 focus:outline-none" />
+          <input type="text" placeholder="Atleta 2 (Nome Completo)" class="w-full text-xs font-bold border-b focus:outline-none" />
+        </div>
+      </div>
+
+      <!-- Placar de Games (Game a Game) -->
+      <div class="mb-4">
+        <h3 class="text-xs font-bold uppercase text-slate-700 mb-2">Controle Game por Game (Marcar X no Vencedor do Game)</h3>
+        <table class="w-full text-xs border-collapse border border-slate-300">
+          <thead>
+            <tr class="bg-amber-50 text-slate-800 font-bold text-center print-bg-gray">
+              <th class="border border-slate-300 py-1.5 px-2">DUPLAS</th>
+              <th class="border border-slate-300 py-1.5 w-10">G1</th>
+              <th class="border border-slate-300 py-1.5 w-10">G2</th>
+              <th class="border border-slate-300 py-1.5 w-10">G3</th>
+              <th class="border border-slate-300 py-1.5 w-10">G4</th>
+              <th class="border border-slate-300 py-1.5 w-10">G5</th>
+              <th class="border border-slate-300 py-1.5 w-10">G6</th>
+              <th class="border border-slate-300 py-1.5 w-10 bg-amber-100">G7*</th>
+              <th class="border border-slate-300 py-1.5 w-16 bg-slate-100">TOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-slate-300 p-2 font-bold text-slate-800">DUPLA A</td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center bg-amber-50/50"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center font-black text-base"><input type="number" min="0" max="7" class="w-10 text-center focus:outline-none" /></td>
+            </tr>
+            <tr>
+              <td class="border border-slate-300 p-2 font-bold text-slate-800">DUPLA B</td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center bg-amber-50/50"><input type="checkbox" /></td>
+              <td class="border border-slate-300 p-1 text-center font-black text-base"><input type="number" min="0" max="7" class="w-10 text-center focus:outline-none" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <span class="text-[10px] text-slate-500 mt-1 block">*O Game 7 é disputado em caso de empate em 5x5 (vai a 7 games). Se empatar 6x6, disputar Tie-Break.</span>
+      </div>
+
+      <!-- Tie-Break (Se 6x6) -->
+      <div class="bg-amber-50 border border-amber-300 rounded-xl p-3 mb-4 text-xs print-bg-gray">
+        <div class="flex items-center justify-between font-bold text-amber-950 mb-1">
+          <span>TIE-BREAK (No 6 x 6 - até 7 pontos com dif. de 2):</span>
+        </div>
+        <div class="flex items-center justify-around">
+          <div class="flex items-center gap-2">
+            <span>Pontos Dupla A:</span>
+            <input type="number" min="0" class="w-12 text-center font-bold border bg-white focus:outline-none" />
+          </div>
+          <span class="font-black">X</span>
+          <div class="flex items-center gap-2">
+            <span>Pontos Dupla B:</span>
+            <input type="number" min="0" class="w-12 text-center font-bold border bg-white focus:outline-none" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Resultado Final Beach Tennis -->
+      <div class="border-t border-slate-300 pt-3 text-xs">
+        <div class="bg-slate-900 text-white p-3 rounded-lg flex justify-between items-center">
+          <span class="font-extrabold text-amber-400 uppercase">DUPLA VENCEDORA:</span>
+          <input type="text" placeholder="Nome da Dupla Campeã" class="font-black text-sm text-white border-b border-amber-400 bg-transparent w-64 focus:outline-none" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 text-center mt-6 pt-4 border-t border-slate-300">
+          <div>
+            <div class="border-b border-slate-400 mb-1"></div>
+            <span class="text-[10px] font-bold text-slate-600 block">Assinatura Dupla A</span>
+          </div>
+          <div>
+            <div class="border-b border-slate-400 mb-1"></div>
+            <span class="text-[10px] font-bold text-slate-600 block">Assinatura Dupla B</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Script para alternar entre as tabs -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const tabName = button.getAttribute('data-tab');
+
+          // Reset buttons
+          tabButtons.forEach(btn => {
+            btn.classList.remove('active', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+            btn.classList.add('bg-slate-100', 'text-slate-600');
+          });
+
+          // Activate current button
+          button.classList.remove('bg-slate-100', 'text-slate-600');
+          button.classList.add('active', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+
+          // Show tab content
+          tabContents.forEach(content => {
+            if (content.id === `tab-${tabName}`) {
+              content.classList.remove('hidden');
+            } else {
+              content.classList.add('hidden');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
